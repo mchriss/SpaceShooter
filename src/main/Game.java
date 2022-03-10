@@ -80,6 +80,10 @@ public class Game extends JFrame {
     }
 
     public void readScores() {          // pontszamok betoltese, rendezese csokkeno sorrendbe
+        File dir = new File(System.getProperty("user.dir") + "\\highscores");
+        if(! dir.exists()) {
+            dir.mkdir();
+        }
         File saveFile = new File(savePath);
         try {
             saveFile.createNewFile();
